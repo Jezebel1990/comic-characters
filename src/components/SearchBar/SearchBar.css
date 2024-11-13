@@ -30,6 +30,7 @@
     background-color: transparent;
     height: 100%;
     width: 100%;
+    color: var(--red-3);
 }
 
 .search-input::placeholder {

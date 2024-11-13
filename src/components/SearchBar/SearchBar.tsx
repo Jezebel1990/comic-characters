@@ -1,8 +1,18 @@
 import "./SearchBar.css";
 import shape from "../../assets/shape3x.png";
+import { ChangeEvent } from "react";
 
-export function SearchBar() {
-   
+
+interface SearchBarProps {
+    onSearch: (query: string) => void;
+  }
+
+  
+export function SearchBar({ onSearch } : SearchBarProps) {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        onSearch(e.target.value); 
+    };
+
     return (
         <div className="search-bar">
         <img
@@ -14,6 +24,7 @@ export function SearchBar() {
             type="text"
             placeholder="Procure por heróis"
             className="search-input"
+            onChange={handleInputChange}
         />
     </div>
     );
