@@ -7,20 +7,30 @@ import { HeroToolbar } from "../../components/HeroToolbar/HeroToolbar";
 import { useState, useEffect } from 'react';
 
 export function Home() {
-  const [isSortActive, setIsSortActive] = useState(false);
+  const [isSortActive, setIsSortActive] = useState(false); 
   const [isFavoritesActive, setIsFavoritesActive] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(''); // Estado para a query de busca
+  const [searchQuery, setSearchQuery] = useState(''); 
   const { characters, loading, error } = useFetchCharacters();
+  
+  const [originalCharacters, setOriginalCharacters] = useState(characters);
+
   const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
   useEffect(() => {
-    // Filtra os personagens com base na query de busca
-    setFilteredCharacters(
-      characters.filter(character =>
-        character.name.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+    setOriginalCharacters(characters);  
+  }, [characters]);
+
+  useEffect(() => {
+    const filtered = originalCharacters.filter(character =>
+      character.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-  }, [searchQuery, characters]);
+
+    if (isSortActive) {
+      setFilteredCharacters(filtered.sort((a, b) => a.name.localeCompare(b.name))); // A-Z
+    } else {
+      setFilteredCharacters(filtered.sort((a, b) => b.name.localeCompare(a.name))); // Z-A
+    }
+  }, [searchQuery, originalCharacters, isSortActive]);
 
   const handleToggleSort = () => {
     setIsSortActive(!isSortActive);
@@ -34,7 +44,7 @@ export function Home() {
     setSearchQuery(query);
   };
 
-  const totalHeroes = filteredCharacters ? filteredCharacters.length : 0;
+  const totalHeroes = filteredCharacters.length; 
 
   return (
     <>
