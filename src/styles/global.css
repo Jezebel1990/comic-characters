@@ -1,5 +1,5 @@
 :root {
-  font-family:  "Merriweather Sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
 
   /* red */
   --red-1: #fdecec;
@@ -8,11 +8,14 @@
   --red-4: #ff0b0b;
   --red-5: #ff1510;
   --red-6: #e92429;
+
+  /* blue */
+  --blue-1: #e7f6e7;
 /* 
   grey */
   --grey-1: #404040; 
-  --grey-2: #464646; 
-  --grey-3: #969696; 
+  --grey-2: #8c8c8c; 
+  --grey-3: #b9b9b9; 
   --grey-4: #bdbdbd;
   --grey-5: #6d706d;
 }
