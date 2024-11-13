@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 interface Character {
-  id: string;
+  id: number;
   name: string;
   image: string;
   favorite: boolean;
