@@ -5,6 +5,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { HeroToolbar } from "../../components/HeroToolbar/HeroToolbar";
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 interface Character {
   id: number;
@@ -93,13 +94,15 @@ export function Home() {
           {error && <p>Erro: {error}</p>}
 
           {filteredCharacters.map(character => (
-            <div key={character.id} className="character-card">
+            <div key={character.id}  className="character-card">
+            <Link to={`/hero/${character.id}`} className='character-image-link'>
               <img
                 src={character.image}
                 alt={character.name}
                 loading="lazy"
                 className="character-image"
               />
+               </Link>
               <div className="character-name-container">
                 <h5 className="character-name">{character.name}</h5>
                 <LikeButton
