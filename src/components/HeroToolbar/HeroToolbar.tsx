@@ -32,7 +32,11 @@ export function HeroToolbar({
     return (
         <div className="hero-toolbar">
         <div className="hero-toolbar-left">
-        <span>Encontrados {totalHeroes} heróis</span>
+        <span>
+        {totalHeroes === 1 
+          ? `Encontrado ${totalHeroes} herói` 
+          : `Encontrados ${totalHeroes} heróis`}
+          </span>
         </div>
 
         <div className="hero-toolbar-right">
