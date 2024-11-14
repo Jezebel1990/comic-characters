@@ -1,0 +1,17 @@
+.logo-hero {
+    width: auto;
+    height: 64px;
+    background: 'none';
+    border: 'none';
+    cursor: 'pointer';
+    
+}
+
+.topbar-container {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    padding-left: 80px; 
+    gap: 90px;
+    padding-top: 20px;
+}

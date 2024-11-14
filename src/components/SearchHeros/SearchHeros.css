@@ -1,0 +1,35 @@
+.search-heros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 32px;
+    height: 44px;
+    width: 620px;
+    background-color: #fff;
+ 
+}
+
+.search-heros-input {
+    border: none;
+    outline: none;
+    padding: 32px;
+    flex: 1;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    color: var(--grey-3);
+}
+
+.search-heros-input::placeholder {
+    color: var(--grey-3);
+}
+
+.search-hero-icon {
+    height: 16px;
+    width: 16px;
+    margin-inline-start: 20px;
+    cursor: pointer;
+}
