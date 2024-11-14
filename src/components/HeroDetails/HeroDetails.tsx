@@ -3,6 +3,7 @@ import bookIcon from "../../assets/book.svg";
 import videoIcon from "../../assets/video.svg";
 import reviewIcon from "../../assets/review.svg";
 import { LikeHeroButton } from "../LikeHeroButton/LikeHeroButton";
+import { useState } from "react";
 
 interface HeroDetailsProps {
     name: string;
@@ -21,20 +22,26 @@ interface HeroDetailsProps {
     seriesCount,
     lastModified,
   }: HeroDetailsProps) {
+    const [isLiked, setIsLiked] = useState(() => {
+        const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        return savedFavorites.includes(name);
+    });
   
-    const handleToggleFavorite = (heroName: string) => {
-      const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-      const isAlreadyFavorite = savedFavorites.includes(heroName);
-  
-      if (isAlreadyFavorite) {
-        // Remove do favorito
-        const updatedFavorites = savedFavorites.filter((hero: string) => hero !== heroName);
-        localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-      } else {
-        // Adiciona aos favoritos
-        savedFavorites.push(heroName);
-        localStorage.setItem('favorites', JSON.stringify(savedFavorites));
-      }
+    const handleToggleFavorite = () => {
+        const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        const isAlreadyFavorite = savedFavorites.includes(name);
+    
+        if (isAlreadyFavorite) {
+            // Remove dos favoritos
+            const updatedFavorites = savedFavorites.filter((hero: string) => hero !== name);
+            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+            setIsLiked(false);
+        } else {
+            // Adiciona aos favoritos
+            savedFavorites.push(name);
+            localStorage.setItem('favorites', JSON.stringify(savedFavorites));
+            setIsLiked(true);
+        }
     };
   
     // Formatação da data
@@ -49,7 +56,7 @@ interface HeroDetailsProps {
         <div className="hero-details">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <h2>{name}</h2>
-            <LikeHeroButton heroName={name} onClick={handleToggleFavorite} />
+            <LikeHeroButton isLiked={isLiked} onClick={handleToggleFavorite} />
           </div>
           <p id="description">{description ? description : 'Descrição não disponível.'}</p>
   
