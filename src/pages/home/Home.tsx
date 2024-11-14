@@ -56,14 +56,28 @@ export function Home() {
     setSearchQuery(query);
   };
 
-  // Função para alternar o estado de "favorito" de um personagem
+  // Função para alternar o estado de "favorito" de um personagem com limite de 5
   const handleLike = (id: number) => {
+    const currentFavorites = characters.filter(character => character.favorite);
+
     setCharacters(prevCharacters =>
-      prevCharacters.map(character =>
-        character.id === id
-          ? { ...character, favorite: !character.favorite } 
-          : character
-      )
+      prevCharacters.map(character => {
+        if (character.id === id) {
+          // Se o personagem já é favorito, permita desfavoritar
+          if (character.favorite) {
+            return { ...character, favorite: false };
+          }
+
+          // Se não é favorito e o limite de 5 ainda não foi atingido, permita favoritar
+          if (currentFavorites.length < 5) {
+            return { ...character, favorite: true };
+          } else {
+            alert('Você só pode ter no máximo 5 personagens favoritos.');
+            return character;
+          }
+        }
+        return character;
+      })
     );
   };
 
@@ -89,31 +103,30 @@ export function Home() {
       </div>
 
       <div className="container">
-        <div className="character-list">
-          {loading && <p>Carregando...</p>}
-          {error && <p>Erro: {error}</p>}
+      <div className="character-list">
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
 
-          {filteredCharacters.map(character => (
-            <div key={character.id}  className="character-card">
-            <Link to={`/hero/${character.id}`} className='character-image-link'>
-              <img
-                src={character.image}
-                alt={character.name}
-                loading="lazy"
+        {filteredCharacters.map(character => (
+          <div key={character.id} className="character-item">
+            <Link to={`/hero/${character.id}`}>
+              <img src={character.image} 
+              alt={character.name} 
+               loading="lazy"
                 className="character-image"
               />
-               </Link>
-              <div className="character-name-container">
-                <h5 className="character-name">{character.name}</h5>
-                <LikeButton
-                  isLiked={character.favorite} 
-                  onClick={() => handleLike(character.id)} 
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+            </Link>
+            <div className="character-name-container">
+            <h5 className="character-name">{character.name}</h5>
+            <LikeButton
+              isLiked={character.favorite}
+              onClick={() => handleLike(character.id)}
+            />
+          </div>
+          </div>
+        ))}
+     </div>
+     </div>
     </>
   );
 }
