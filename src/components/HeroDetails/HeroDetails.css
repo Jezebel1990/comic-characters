@@ -1,0 +1,99 @@
+.hero-container {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    padding-left: 130px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+
+.hero-container::before {
+  content: attr(data-text);
+  position: absolute;
+  right:20px;
+  top: 10px;
+  z-index: -1;
+  font-size: 220px;
+  font-weight: bolder;
+  color: white;
+  text-align: right;
+  pointer-events: none;
+}
+
+.hero-details {
+    width: 300px;
+    padding-left: 0;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.hero-details h2 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--grey-1);
+}
+
+
+.hero-details h6 {
+    margin: 0;
+    color: var(--grey-1);
+    
+}
+
+#description {
+    color: var(--grey-2);
+    font-size: 12px;
+}
+
+.hero-details p {
+    margin: 0;
+    font-size: 12px;
+    text-align: left;
+    color: var(--grey-1);
+    font-weight: 500;
+}
+
+.hero-details .info-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.hero-details .info-columns div {
+    display: flex;
+    align-items: center;
+}
+
+.hero-details .info-columns img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.hero-details .rating,
+.hero-details .last-comic {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-details .comics, 
+.hero-details .series,
+.hero-details .rating h6,
+.hero-details .last-comic h6 {
+    margin-right: 0px; 
+}
+
+.hero-image {
+    width: auto;
+    height: 500px;
+    max-width: 100%;
+    object-fit: cover;
+    padding-top: 30px;
+}
