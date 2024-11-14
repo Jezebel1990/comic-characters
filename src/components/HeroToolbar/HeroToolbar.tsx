@@ -42,7 +42,7 @@ export function HeroToolbar({
         <div className="hero-toolbar-right">
         <img src={hero} alt="Ícone de herói" className='hero-icon'/>
         <button onClick={onToggleSort} className="sort-button" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-          <h5>Ordenar por nome - A/Z</h5>
+          <h5 className='toggle-sort'>Ordenar por nome - A/Z</h5>
           <img
             src={isSortActive ? toogleLeft : toogleRight} 
             alt="Ícone de toggle de ordenação"
@@ -54,7 +54,7 @@ export function HeroToolbar({
         style={{ background: 'none', border: 'none', cursor: 'pointer' }}
          className={`favorites-button ${isFavorited ? 'active' : ''}`}>
           <img src={isFavorited ? darkHeart : heart} alt="Ícone de favoritos" className='favorites-icon'/>
-          <h5>Somente favoritos</h5>
+          <h5 className='toggle-favorite'>Somente favoritos</h5>
         </button>
       </div>
       </div>

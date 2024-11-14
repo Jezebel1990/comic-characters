@@ -19,7 +19,6 @@
   .favorites-icon{
     width: auto;
     height: 14px;
-
   }
 
   .sort-button,
@@ -44,98 +43,21 @@
 .hero-toolbar-left {
     padding: 0px;
     color: var(--grey-3);
+    font-weight: 600;
 }
 
 
     .hero-toolbar-right {
         display: flex;
         justify-content: flex-end; 
-        padding-left: 360px;
+        padding-left: 350px;
       }
 
+      .toggle-sort,
+      .toggle-favorite {
+          color: var(--red-3);
+          font-size: 14px;
+          margin: 0;
+      }
 
-
-h5 {
-    color: var(--red-3);
-    font-size: 14px;
-}
-
-/* Estilos para dispositivos móveis (máximo de 480px) */
-@media screen and (max-width: 480px) {
-  .hero-toolbar {
-      flex-wrap: wrap; 
-      gap: 8px; 
-      margin-bottom: 12px; 
-  }
-
-  .hero-icon {
-      height: 16px; 
-      margin-right: 8px; 
-  }
-
-  .toggle-icon {
-      height: 24px; 
-  }
-
-  .favorites-icon {
-      height: 12px; 
-  }
-
-  .sort-button {
-      gap: 12px; 
-  }
-
-  .favorites-button {
-      gap: 8px; 
-      margin-left: 10px; 
-  }
-
-  .hero-toolbar-right {
-      padding-left: 0; 
-      justify-content: center; 
-  }
-
-  h5 {
-      font-size: 12px; 
-  }
-}
-
-/* Estilos para tablets (entre 768px e 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .hero-toolbar {
-      flex-wrap: wrap; 
-      gap: 12px; 
-      margin-bottom: 16px; 
-  }
-
-  .hero-icon {
-      height: 20px; 
-      margin-right: 10px; 
-  }
-
-  .toggle-icon {
-      height: 28px; 
-  }
-
-  .favorites-icon {
-      height: 16px; 
-  }
-
-  .sort-button {
-      gap: 14px; 
-  }
-
-  .favorites-button {
-      gap: 10px; 
-      margin-left: 12px; 
-  }
-
-  .hero-toolbar-right {
-      padding-left: 10px; 
-      justify-content: flex-end; 
-  }
-
-  h5 {
-      font-size: 14px; 
-  }
-}
+     
