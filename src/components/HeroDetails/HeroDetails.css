@@ -97,3 +97,76 @@
     object-fit: cover;
     padding-top: 30px;
 }
+
+
+/* Estilos para dispositivos móveis (máximo de 480px) */
+@media (max-width: 480px) {
+    .hero-container {
+      flex-direction: column;
+      padding-left: 36px;
+    }
+  
+    .hero-container::before {
+      font-size: 100px;
+      right: 10px;
+    }
+  
+    .hero-details {
+      width: 300px;
+      padding-top: 40px;
+    }
+  
+    .hero-details h2 {
+      font-size: 18px;
+    }
+  
+    .hero-details p {
+      font-size: 10px;
+    }
+  
+    .hero-image {
+      height: 300px;
+      padding-top: 20px;
+    }
+  
+  
+  
+
+  
+  /* Estilos para tablets (768px a 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-container {
+      flex-direction: column;
+    }
+  
+    .hero-container::before {
+      font-size: 150px;
+      right: 15px;
+    }
+  
+    .hero-details {
+      width: 80%;
+      padding-top: 60px;
+    }
+  
+    .hero-details h2 {
+      font-size: 20px;
+    }
+  
+    .hero-details p {
+      font-size: 11px;
+    }
+  
+    .hero-image {
+      height: 400px;
+    }
+  
+    .hero-details .info-columns {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .hero-details .rating,
+    .hero-details .last-comic {
+      flex-direction: row;
+    }
+  }

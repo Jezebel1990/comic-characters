@@ -60,4 +60,70 @@
           margin: 0;
       }
 
-     
+      @media (max-width: 480px) {
+        .hero-toolbar {
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+    
+        .hero-icon {
+            height: 18px;
+            margin-right: 8px;
+        }
+    
+        .toggle-icon {
+            height: 28px;
+        }
+    
+        .favorites-icon {
+            height: 12px;
+        }
+    
+        .sort-button,
+        .favorites-button {
+            gap: 16px;
+        }
+    
+        .favorites-button {
+            margin-left: 0;
+        }
+    
+        .hero-toolbar-right {
+            padding-left: 20px;
+        }
+    }
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .hero-toolbar {
+            flex-direction: row;
+            gap: 15px;
+        }
+    
+        .hero-icon {
+            height: 18px;
+        }
+    
+        .toggle-icon {
+            height: 30px;
+        }
+    
+        .favorites-icon {
+            height: 13px;
+        }
+    
+        .sort-button,
+        .favorites-button {
+            gap: 18px;
+        }
+    
+        .hero-toolbar-right {
+            padding-left: 250px;
+        }
+    }
+    
+    
+    
+    
+    
+    
