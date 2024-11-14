@@ -1,50 +1,124 @@
-# React + TypeScript + Vite
+# Marvel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
 
-Currently, two official plugins are available:
+Este é um projeto de uma aplicação de página única (SPA) que lista e exibe detalhes de personagens dos quadrinhos da Marvel. Utiliza a API pública da Marvel para buscar informações sobre personagens, permitindo ao usuário visualizar, ordenar, filtrar e favoritar personagens, além de exibir detalhes de cada um, como os quadrinhos mais recentes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Página Inicial](src/assets/pages-guide/home.png)
+![Página de Heróis](src/assets/pages-guide/hero-page.png)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Objetivo
 
-- Configure the top-level `parserOptions` property like this:
+O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de personagens de quadrinhos da Marvel, com as funcionalidades abaixo:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Página de listagem de personagens;
+- Página de detalhe de personagem;
+- Integração com a API da Marvel.
+
+## Requisitos Funcionais
+
+### Página de Listagem de Personagens (Home)
+- Exibir os 20 primeiros resultados da API.
+- Permitir ordenação por nome do personagem.
+- Permitir filtrar por nome usando o campo de busca.
+- Permitir mostrar apenas os personagens favoritos.
+- Permitir que o usuário favoritar/desfavoritar até 5 personagens.
+
+### Página de Detalhe do Personagem
+- Exibir os dados do personagem.
+- Exibir os últimos 10 quadrinhos lançados do personagem (com base no campo `onSaleDate`).
+
+## Requisitos Técnicos
+
+- **SPA (Single Page Application)**: A aplicação deve ser uma SPA, priorizando o uso do React.
+- **Design**: Não devem ser utilizadas bibliotecas de UI como Bootstrap, Semantic UI, Ant Design, etc.
+- **API da Marvel**: Utilizar a [API da Marvel](https://developer.marvel.com/docs) para buscar as informações dos personagens e quadrinhos.
+- **Responsividade**: A aplicação deve ser responsiva e funcionar bem em dispositivos móveis e desktop.
+- **Favoritos**: O sistema de favoritos deve permitir que o usuário escolha até 5 personagens e guarde-os localmente.
+
+## Funcionalidades
+
+### Página de Home
+- Exibição dos personagens com os seguintes dados:
+  - Nome
+  - Imagem (thumbnail)
+  - Breve descrição
+- Barra de busca para filtrar personagens por nome.
+- Opção para ordenar os personagens por nome.
+- Lista de personagens favoritos visível, com a possibilidade de alternar a exibição.
+
+### Página de Detalhe
+- Exibição de todos os detalhes do personagem selecionado, incluindo:
+  - Nome
+  - Descrição
+  - Imagem (thumbnail)
+  - Últimos 10 quadrinhos lançados (ordenados por data de lançamento, `onSaleDate`).
+- Opção de voltar para a página principal (Home).
+
+## Requisitos de Implementação
+
+1. **SPA**: A aplicação deve ser construída como uma SPA, sem a necessidade de recarregar a página.
+2. **Não utilizar bibliotecas de UI prontas**: A aplicação deve ser construída com React e CSS próprio, sem a utilização de frameworks como Bootstrap, Semantic UI ou Ant Design.
+3. **API da Marvel**: O projeto deve consumir a [API da Marvel](https://developer.marvel.com/docs), utilizando a chave de API fornecida ao registrar o aplicativo.
+4. **Deploy**: O projeto deve ser disponibilizado em uma URL pública, para que o funcionamento da aplicação possa ser avaliado.
+5. **Controle de Estado**: Implementar o gerenciamento de estado, seja com Redux, Context API ou outra forma de controle de estado, para armazenar os personagens e os favoritos.
+
+## Como Rodar o Projeto
+
+### Requisitos
+
+- **Node.js** (recomendado v16 ou superior)
+- **NPM** (ou Yarn)
+
+### Instalação
+
+1. Clone o repositório para sua máquina local:
+   ```bash
+   git clone https://github.com/Jezebel1990/comic-characters.git
+    ```
+
+
+2. Navegue até o diretório do projeto:
+```bash
+   cd comic-characters
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. Instale as dependências:
+```bash
+  npm install
 ```
+
+4. Inicie o servidor de desenvolvimento:
+```bash
+  npm start
+```
+
+
+5. Abra o navegador e acesse `http://localhost:3000` para visualizar o projeto em execução.
+
+### Estrutura do Projeto
+├── assets/                 # Arquivos de layout e recursos estáticos
+├── src/
+│   ├── components/         # Componentes reutilizáveis
+│   ├── pages/              # Páginas (Home e Detalhe)
+│   ├── hooks/              # Integração com a API da Marvel
+│   ├── store/              # Gerenciamento de estado 
+│   └── App.js              # Componente principal
+├── public/                 # Arquivos públicos, como o index.html
+├── package.json            # Dependências e scripts do projeto
+├── .gitignore              # Arquivos e pastas a serem ignorados pelo Git
+└── README.md               # Este arquivo
+
+
+### API da Marvel
+A API da Marvel requer uma chave pública e privada, que podem ser obtidas ao se cadastrar no site de desenvolvedor da Marvel. O uso da API é feito por meio de requisições HTTP para os endpoints disponíveis, como:
+
+**Listar personagens:** `https://gateway.marvel.com/v1/public/characters`
+**Detalhes de um personagem:** `https://gateway.marvel.com/v1/public/characters/{characterId}`
+**Quadrinhos de um personagem:** `https://gateway.marvel.com/v1/public/characters/{characterId}/comics`
+
+### Licença
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
+
+Feito com ♥ por [Jezebel Guedes](https://www.linkedin.com/in/jezebel-guedes/) 👋 Entre em contato!
