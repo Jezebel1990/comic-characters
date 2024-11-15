@@ -23,25 +23,40 @@ p {
   align-items: center;     
 }
 
-.container {
-  display: flex;
-  justify-content: center;
+
+.hero-toolbar, .character-list {
+  margin: 0;
 }
+
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-right: 200px;
+}
+
+
+
+.hero-toolbar{
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
 
 .character-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
-  gap: 32px;
-  margin: 0 auto;
-  padding-bottom: 100px;
+  gap: 36px;
 }
 
-.character-card {
+ .character-card {
   display: flex;
   flex-direction: column; 
   align-items: center;
   position: relative;
-}
+} 
 
 .character-image {
   width: 220px; 
@@ -49,13 +64,15 @@ p {
   border-bottom: 5px solid var(--red-6);
 }
 
+
 .character-name-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-top: 20px; 
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
 }
 
 .character-name {
@@ -65,12 +82,7 @@ p {
 }
 
 
-.hero-toolbar-container {
-  display: flex;
-  padding-left: 200px;
-  margin-top: 80px;
-  margin-bottom: 20px;
-}
+
 
 /* Estilos para dispositivos móveis (máximo de 480px) */
 @media screen and (max-width: 480px) {
@@ -79,15 +91,16 @@ p {
     gap: 12px; 
   }
 
-  .hero-toolbar-container {
-    padding-left: 16px;  
-    margin-top: 32px;  
+  .hero-container {
+    margin-bottom: 80px;
+    margin-right: 35px;
   }
 
-  .home-container {
-    padding: 8px;  
+  .hero-toolbar{
+    margin-top: 30px;
+    margin-bottom: 5px;
   }
-
+  
   h1 {
     font-size: 1.25rem;  
     margin: 6px 0;  
@@ -101,18 +114,15 @@ p {
 /* Estilos para tablets (768px a 1024px) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .character-list {
-    grid-template-columns: 1fr 1fr;  
+    grid-template-columns: repeat(2, 1fr);  
     gap: 16px;  
   }
 
-  .hero-toolbar-container {
-    padding-left: 20px;  
-    margin-top: 40px;  
+  .hero-container {
+    margin-right: 120px;
   }
-
-  .home-container {
-    padding: 12px;
-  }
+  
+   
 
   h1 {
     font-size: 1.5rem;  

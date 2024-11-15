@@ -34,7 +34,7 @@ export function HeroPage() {
         {comics.length > 0 ? (
           <ComicDetails comics={comics} />
         ) : (
-          <p>Não há quadrinhos disponíveis.</p>
+          <p className='comic-text'>Não há quadrinhos disponíveis.</p>
         )}
       </div>
     </div>

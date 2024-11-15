@@ -103,8 +103,11 @@ export function Home() {
       <div className="search-bar-container">
         <SearchBar onSearch={handleSearchChange} />
       </div>
+      {/* Filtros de herois  */}
 
-      <div className="hero-toolbar-container">
+
+    <div className="hero-container">
+      <div className="hero-toolbar">
         <HeroToolbar
           totalHeroes={filteredCharacters.length}
           onToggleSort={handleToggleSort}
@@ -113,14 +116,12 @@ export function Home() {
           isFavoritesActive={isFavoritesActive}
         />
       </div>
-
-      <div className="container">
-        <div className="character-list">
+      {/* Lista de imagens  */}
+      <div className="character-list">
           {loading && <p>Loading...</p>}
           {error && <p>Error: {error}</p>}
-
           {filteredCharacters.map(character => (
-            <div key={character.id} className="character-item">
+            <div key={character.id} className="character-card">
               <Link to={`/hero/${character.id}`}>
                 <img 
                   src={character.image} 

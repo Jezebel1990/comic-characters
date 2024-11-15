@@ -57,7 +57,7 @@
 /* Responsividade para tablets (768px a 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .search-heros {
-        width: 80%;  
+        width: 50%;  
         height: 44px;  
     }
 

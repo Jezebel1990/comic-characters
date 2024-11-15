@@ -12,7 +12,7 @@ interface ComicDetailsProps {
 export function ComicDetails({ comics }: ComicDetailsProps) {
   return (
     <div className="comic-container">
-      <h5>Últimos lançamentos</h5>
+      <h3 className="comic-news">Últimos lançamentos</h3>
       <div className="comic-grid">
         {comics
           .sort((a, b) => new Date(b.onSaleDate).getTime() - new Date(a.onSaleDate).getTime())
@@ -23,8 +23,9 @@ export function ComicDetails({ comics }: ComicDetailsProps) {
                 src={comic.image}
                 alt={comic.title}
                 className="comic-images"
+                loading="lazy" 
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://via.placeholder.com/150';
+                  (e.target as HTMLImageElement).src = 'https://ambrosia.com.br/wp-content/uploads/2023/03/marvel-universo-super-herois-revista-cultural-ambrosia.webp';
                 }}
               />
               <p>{comic.title}</p>

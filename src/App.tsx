@@ -5,13 +5,17 @@ import { HeroPage } from './pages/hero-page/Hero-page';
 
 function App() {
   return (
+    <div className="app-container">
     <Router>
+    <div className="main-content">
       <Routes>
      <Route path="/" element={<Home />} />
       <Route path="/hero/:id" element={<HeroPage />} />
       </Routes>
+      </div>
       <Footer />
     </Router>
+    </div>
   );
 }
 

@@ -7,16 +7,15 @@ import heart from "../../assets/heart1,5x.png";
 import "./HeroToolbar.css";
 
 interface HeroToolbarProps {
-    totalHeroes: number;
-    onToggleSort: () => void;
-    isSortActive: boolean;
-    onShowFavorites: () => void;
-    isFavoritesActive: boolean;
-  }
-  
+  totalHeroes: number;
+  onToggleSort: () => void;
+  isSortActive: boolean;
+  onShowFavorites: () => void;
+  isFavoritesActive: boolean;
+}
 
 export function HeroToolbar({
-    totalHeroes,
+  totalHeroes,
   onToggleSort,
   isSortActive,
   onShowFavorites,
@@ -29,17 +28,17 @@ export function HeroToolbar({
     onShowFavorites(); 
   };
 
-    return (
-        <div className="hero-toolbar">
-        <div className="hero-toolbar-left">
+  return (
+    <div className="hero-toolbar">
+      <div className="hero-toolbar-left">
         <span>
-        {totalHeroes === 1 
-          ? `Encontrado ${totalHeroes} herói` 
-          : `Encontrados ${totalHeroes} heróis`}
-          </span>
-        </div>
+          {totalHeroes === 1 
+            ? `Encontrado ${totalHeroes} herói` 
+            : `Encontrados ${totalHeroes} heróis`}
+        </span>
+      </div>
 
-        <div className="hero-toolbar-right">
+      <div className="hero-toolbar-right">
         <img src={hero} alt="Ícone de herói" className='hero-icon'/>
         <button onClick={onToggleSort} className="sort-button" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
           <h5 className='toggle-sort'>Ordenar por nome - A/Z</h5>
@@ -49,15 +48,14 @@ export function HeroToolbar({
             className="toggle-icon"
           />
         </button>
-  
+
         <button onClick={handleFavoriteClick} 
         style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-         className={`favorites-button ${isFavorited ? 'active' : ''}`}>
+        className={`favorites-button ${isFavorited ? 'active' : ''}`}>
           <img src={isFavorited ? darkHeart : heart} alt="Ícone de favoritos" className='favorites-icon'/>
           <h5 className='toggle-favorite'>Somente favoritos</h5>
         </button>
       </div>
-      </div>
-    );
-  }
-  
+    </div>
+  );
+}

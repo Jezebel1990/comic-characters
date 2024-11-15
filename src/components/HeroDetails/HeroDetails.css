@@ -1,4 +1,4 @@
-.hero-container {
+.hero-details-container {
     display: flex;
     gap: 20px;
     position: relative;
@@ -8,11 +8,11 @@
 }
 
 
-.hero-container::before {
+.hero-details-container::before {
   content: attr(data-text);
   position: absolute;
-  right:20px;
-  top: 10px;
+  right: 10px;
+  top: 40px;
   z-index: -1;
   font-size: 220px;
   font-weight: bolder;
@@ -43,6 +43,7 @@
     color: var(--grey-1);
     
 }
+
 
 #description {
     color: var(--grey-2);
@@ -101,6 +102,11 @@
 
 /* Estilos para dispositivos móveis (máximo de 480px) */
 @media (max-width: 480px) {
+  .hero-details-container {
+    padding-left: 60px;
+  }
+
+
     .hero-container {
       flex-direction: column;
       padding-left: 36px;
@@ -125,8 +131,8 @@
     }
   
     .hero-image {
-      height: 300px;
-      padding-top: 20px;
+      display: none;
+
     }
   
   

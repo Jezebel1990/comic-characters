@@ -62,10 +62,10 @@ export function HeroDetails({
   });
 
   return (
-    <div className="hero-container" data-text={name}>
+    <div className="hero-details-container" data-text={name}>
       <div className="hero-details">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <h2>{name}</h2>
+          <h2>{name.toUpperCase()}</h2>
           <LikeHeroButton isLiked={isLiked} onClick={handleToggleFavorite} />
         </div>
         <p id="description">{description ? description : 'Descrição não disponível.'}</p>

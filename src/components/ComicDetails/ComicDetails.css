@@ -1,12 +1,4 @@
 
-h5 {
-    color: var(--grey-1);
-    text-align: left;
-    margin-bottom: 20px;
-    width: 100%; 
-  }
-  
-  
   .comic-container {
     padding-top: 60px;
     padding-left: 150px;
@@ -23,17 +15,30 @@ h5 {
     object-fit: cover; 
   }
   
+  .comic-news h3 {
+    font-size: 16px;
+    text-align: left;
+    width: 100%; 
+  }
   
+  .comic-news { 
+    color: var(--grey-1);
+  }
+  
+
+
   .comic-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
-    gap: 20px; 
-    padding-right: 150px;
+    padding-right: 100px;
   }
   
  
   .comic-item {
     text-align: center; 
+    margin-top: 40px;
+    gap: 30px;
+    padding-right: 90px;
   }
   
   
@@ -69,6 +74,13 @@ h5 {
     gap: 12px; 
   }
 
+  .comic-news { 
+   padding-left: 20px;
+   margin-top: 30px;
+  }
+  
+
+
   .comic-images {
     width: 100px; 
     height: 160px;
@@ -83,6 +95,7 @@ h5 {
 
   .comic-item {
     text-align: center;
+    padding-right: 0px;
   }
 
   .comic-container p {
@@ -118,7 +131,7 @@ h5 {
   }
 
   .comic-grid {
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 16px; 
     padding-right: 50px; 
   }
