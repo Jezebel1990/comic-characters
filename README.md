@@ -68,7 +68,7 @@ O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de
 
 ### Requisitos
 
-- **Node.js** (recomendado v16 ou superior)
+- **Node.js** : v20.18.0
 - **NPM** (ou Yarn)
 
 ### Instalação

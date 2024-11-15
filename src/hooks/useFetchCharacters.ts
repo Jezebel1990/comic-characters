@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
+import md5 from 'md5';
 
 interface Character {
   id: number;
   name: string;
-  description: string;
   image: string;
   favorite: boolean;
 }
@@ -16,14 +16,23 @@ export function useFetchCharacters() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = import.meta.env.VITE_MARVEL_API_URL;
-        const apiKey = import.meta.env.VITE_MARVEL_API_KEY;
+        // Carregar as variáveis de ambiente
+        const apiUrl = import.meta.env.VITE_MARVEL_API_URL;  
+        const publicKey = import.meta.env.VITE_MARVEL_API_PUBLIC_TOKEN;
+        const privateKey = import.meta.env.VITE_MARVEL_API_PRIVATE_TOKEN;
+        const timestamp = new Date().getTime().toString();
 
-        if (!apiUrl || !apiKey) {
+        // Calcular o hash MD5 (timestamp + privateKey + publicKey)
+        const hash = md5(timestamp + privateKey + publicKey);
+
+        // Verificar se as variáveis de ambiente estão definidas
+        if (!apiUrl || !publicKey || !privateKey) {
           throw new Error('URL da API ou chave da API não definidas.');
         }
 
-        const url = `${apiUrl}/characters?ts=1&apikey=${apiKey}`;
+        // URL com parâmetros para autenticação
+        const url = `${apiUrl}/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`Erro ${response.status}: ${response.statusText}`);
@@ -31,18 +40,15 @@ export function useFetchCharacters() {
 
         const data = await response.json();
 
-        if (!data?.data?.results) {
-          throw new Error('Dados de personagens não encontrados.');
-        }
-
+        // Formatar os dados dos personagens
         const formattedCharacters = data.data.results.slice(0, 20).map((char: any) => ({
           id: char.id,
           name: char.name,
           description: char.description,
           image: char.thumbnail 
             ? `${char.thumbnail.path}.${char.thumbnail.extension}`
-            : 'https://images.impresa.pt/sicnot/2023-11-13-thumbnail_MARVEL-STUDIOS.png-74c447c9/original',
-          favorite: false,
+            : 'https://images.impresa.pt/sicnot/2023-11-13-thumbnail_MARVEL-STUDIOS.png-74c447c9/original',  
+          favorite: false,  
         }));
 
         setCharacters(formattedCharacters);

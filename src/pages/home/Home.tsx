@@ -25,6 +25,13 @@ export function Home() {
     let filtered = characters.filter(character =>
       character.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
+    const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+    for (const item of filtered) {
+      if (savedFavorites.includes(item.name)) {
+        item.favorite = true;
+      }
+    }
 
     // Ordena os personagens conforme o estado da ordenação
     if (isSortActive) {
@@ -33,8 +40,8 @@ export function Home() {
       filtered.sort((a, b) => b.name.localeCompare(a.name)); // Z-A
     }
 
-    setFilteredCharacters(filtered); 
-  }, [searchQuery, characters, isSortActive]); 
+    setFilteredCharacters(filtered);
+  }, [searchQuery, characters, isSortActive]);
 
   // Lógica para alternar a ordenação
   const handleToggleSort = () => {
@@ -60,8 +67,8 @@ export function Home() {
   const handleLike = (id: number) => {
     const currentFavorites = characters.filter(character => character.favorite);
 
-    setCharacters(prevCharacters =>
-      prevCharacters.map(character => {
+    setCharacters(prevCharacters => {
+      const updatedCharacters = prevCharacters.map(character => {
         if (character.id === id) {
           // Se o personagem já é favorito, permita desfavoritar
           if (character.favorite) {
@@ -77,8 +84,13 @@ export function Home() {
           }
         }
         return character;
-      })
-    );
+      });
+
+      // Salva os personagens atualizados no localStorage
+      localStorage.setItem('favorites', JSON.stringify(updatedCharacters.filter(character => character.favorite).map(character => character.name)));
+    
+      return updatedCharacters;
+    });
   };
 
   return (
@@ -103,30 +115,31 @@ export function Home() {
       </div>
 
       <div className="container">
-      <div className="character-list">
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+        <div className="character-list">
+          {loading && <p>Loading...</p>}
+          {error && <p>Error: {error}</p>}
 
-        {filteredCharacters.map(character => (
-          <div key={character.id} className="character-item">
-            <Link to={`/hero/${character.id}`}>
-              <img src={character.image} 
-              alt={character.name} 
-               loading="lazy"
-                className="character-image"
-              />
-            </Link>
-            <div className="character-name-container">
-            <h5 className="character-name">{character.name}</h5>
-            <LikeButton
-              isLiked={character.favorite}
-              onClick={() => handleLike(character.id)}
-            />
-          </div>
-          </div>
-        ))}
-     </div>
-     </div>
+          {filteredCharacters.map(character => (
+            <div key={character.id} className="character-item">
+              <Link to={`/hero/${character.id}`}>
+                <img 
+                  src={character.image} 
+                  alt={character.name} 
+                  loading="lazy" 
+                  className="character-image"
+                />
+              </Link>
+              <div className="character-name-container">
+                <h5 className="character-name">{character.name}</h5>
+                <LikeButton
+                  isLiked={character.favorite}
+                  onClick={() => handleLike(character.id)}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

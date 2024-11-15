@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import md5 from 'md5';
 
 interface CharacterDetails {
   id: number;
@@ -19,13 +20,22 @@ export function useFetchCharacterDetails(characterId: number) {
   useEffect(() => {
     const fetchCharacterDetails = async () => {
       try {
+        // Carregar as variáveis de ambiente
         const apiUrl = import.meta.env.VITE_MARVEL_API_URL;
-        const apiKey = import.meta.env.VITE_MARVEL_API_KEY;
-        const url = `${apiUrl}/characters/${characterId}?ts=1&apikey=${apiKey}`;
+        const publicKey = import.meta.env.VITE_MARVEL_API_PUBLIC_TOKEN;
+        const privateKey = import.meta.env.VITE_MARVEL_API_PRIVATE_TOKEN;
+        const timestamp = new Date().getTime().toString();
 
-        if (!apiUrl || !apiKey) {
+        // Calcular o hash MD5 (timestamp + privateKey + publicKey)
+        const hash = md5(timestamp + privateKey + publicKey);
+
+        // Verificar se as variáveis de ambiente estão definidas
+        if (!apiUrl || !publicKey || !privateKey) {
           throw new Error('URL da API ou chave da API não definidas.');
         }
+
+        // URL com parâmetros para autenticação
+        const url = `${apiUrl}/characters/${characterId}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
 
         const response = await fetch(url);
         if (!response.ok) {
