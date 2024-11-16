@@ -1,8 +1,8 @@
 import "./HeroDetails.css";
-import bookIcon from "../../assets/book.svg";
-import videoIcon from "../../assets/video.svg";
-import reviewIcon from "../../assets/review.svg";
-import { LikeHeroButton } from "../LikeHeroButton/LikeHeroButton";
+import bookIcon from "../../../assets/book.svg";
+import videoIcon from "../../../assets/video.svg";
+import reviewIcon from "../../../assets/review.svg";
+import { LikeHeroButton } from "../../LikeHeroButton/LikeHeroButton";
 import { useState, useEffect } from "react";
 
 

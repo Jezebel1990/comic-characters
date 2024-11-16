@@ -7,9 +7,11 @@ const initialFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 export const store = configureStore({
   reducer: {
     favorites: favoritesReducer,
+  
   },
   preloadedState: {
-    favorites: { favorites: initialFavorites }, // Carrega os favoritos na store
+    favorites: { favorites: initialFavorites }, 
+    
   },
 });
 

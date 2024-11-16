@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import "./Hero-page.css";
 import { TopBar } from '../../components/TopBar/TopBar';
-import { HeroDetails } from '../../components/HeroDetails/HeroDetails';
+import { HeroDetails } from '../../components/Details/HeroDetails/HeroDetails';
 import { useFetchCharacterDetails } from '../../hooks/useFetchCharacterDetails';
-import { ComicDetails } from '../../components/ComicDetails/ComicDetails';
+import { ComicDetails } from '../../components/Details/ComicDetails/ComicDetails';
 import { useFetchComics } from '../../hooks/useFetchComics';
 
 export function HeroPage() {
