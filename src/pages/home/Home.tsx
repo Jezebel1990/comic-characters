@@ -6,6 +6,7 @@ import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { HeroToolbar } from "../../components/HeroToolbar/HeroToolbar";
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 interface Character {
   id: number;
@@ -17,9 +18,20 @@ interface Character {
 export function Home() {
   const [isSortActive, setIsSortActive] = useState(false); 
   const [isFavoritesActive, setIsFavoritesActive] = useState(false); 
-  const [searchQuery, setSearchQuery] = useState(''); 
   const { characters, loading, error, setCharacters } = useFetchCharacters();
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>(characters);
+  const location = useLocation(); // Acessa o estado da navegação
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  // Se houver searchQuery na navegação, atualiza o estado
+  useEffect(() => {
+    if (location.state && location.state.searchQuery) {
+      setSearchQuery(location.state.searchQuery);
+    }
+  }, [location.state]);
+
+
+
 
   useEffect(() => {
     let filtered = characters.filter(character =>
@@ -101,7 +113,10 @@ export function Home() {
         <p>Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!</p>
       </main>
       <div className="search-bar-container">
-        <SearchBar onSearch={handleSearchChange} />
+        <SearchBar 
+        onSearch={handleSearchChange} 
+        value={searchQuery}
+        />
       </div>
       {/* Filtros de herois  */}
 

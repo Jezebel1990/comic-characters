@@ -2,13 +2,12 @@ import "./SearchBar.css";
 import shape from "../../assets/shape3x.png";
 import { ChangeEvent } from "react";
 
-
 interface SearchBarProps {
     onSearch: (query: string) => void;
+    value: string;
   }
-
-  
-export function SearchBar({ onSearch } : SearchBarProps) {
+ 
+export function SearchBar({ onSearch,  value  } : SearchBarProps) {
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         onSearch(e.target.value); 
     };
@@ -22,9 +21,10 @@ export function SearchBar({ onSearch } : SearchBarProps) {
         />
         <input
             type="text"
-            placeholder="Procure por heróis"
+            placeholder={`Procure por heróis ${value}`}
             className="search-input"
             onChange={handleInputChange}
+            value={value}
         />
     </div>
     );

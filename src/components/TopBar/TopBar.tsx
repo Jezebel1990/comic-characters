@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 import logoHero from "../../assets/logo2x.png"
 import "./TopBar.css"
 import { SearchHeros } from "../SearchHeros/SearchHeros";
+import { useState } from "react";
 
 export function TopBar () {
+    const [searchQuery, setSearchQuery] = useState("");
+  
+    const handleSearchChange = (query: string) => {
+        setSearchQuery(query);
+      };
+
     return (
         <header className="topbar-container">
             <Link
@@ -17,7 +24,7 @@ export function TopBar () {
             className="logo-hero" 
             />
             </Link>
-        <SearchHeros onSearch={(query) => console.log(query)}/>
+        <SearchHeros onSearch={handleSearchChange} value={searchQuery}/>
         </header>
     )
 }
