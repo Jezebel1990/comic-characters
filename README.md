@@ -62,7 +62,7 @@ O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de
 - Layout responsivo;
 - Utilização de ES6+;
 - Utilização de ferramentas (Prettier, ESLint e Husky) para garantir a qualidade do código.
-- Testes com Jest e React Testing Library.
+- Testes unitários com Jest e React Testing Library.
 
 ## Requisitos de Implementação
 1. **SPA**: A aplicação deve ser construída como uma SPA, sem a necessidade de recarregar a página.
