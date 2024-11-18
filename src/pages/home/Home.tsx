@@ -7,6 +7,7 @@ import { HeroToolbar } from '../../components/HeroToolbar/HeroToolbar'
 import './Home.css'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import React from 'react'
 
 interface Character {
   id: number

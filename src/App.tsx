@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Footer } from './components/Footer/Footer'
 import { Home } from './pages/home/Home'
 import { HeroPage } from './pages/hero-page/Hero-page'
+import React from 'react'
 
 function App() {
   return (
