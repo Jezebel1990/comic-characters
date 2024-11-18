@@ -5,6 +5,7 @@ import { HeroDetails } from '../../components/Details/HeroDetails/HeroDetails'
 import { useFetchCharacterDetails } from '../../hooks/useFetchCharacterDetails'
 import { ComicDetails } from '../../components/Details/ComicDetails/ComicDetails'
 import { useFetchComics } from '../../hooks/useFetchComics'
+import React from 'react'
 
 export function HeroPage() {
   const { id } = useParams<{ id: string }>()

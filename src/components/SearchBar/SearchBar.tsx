@@ -1,6 +1,8 @@
 import './SearchBar.css'
+// @ts-ignore
 import shape from '../../assets/shape3x.png'
 import { ChangeEvent } from 'react'
+import React from 'react'
 
 interface SearchBarProps {
   onSearch: (query: string) => void

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LikeHeroButton /> should render the correct image based on isLiked prop 1`] = `
+<button
+  style="background: none; cursor: pointer;"
+>
+  <img
+    alt="Not Liked"
+    height="14"
+    src="test-file-stub"
+    width="14"
+  />
+</button>
+`;

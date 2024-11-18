@@ -4,6 +4,7 @@ import videoIcon from '../../../assets/video.svg'
 import reviewIcon from '../../../assets/review.svg'
 import { LikeHeroButton } from '../../LikeHeroButton/LikeHeroButton'
 import { useState, useEffect } from 'react'
+import React from 'react'
 
 interface HeroDetailsProps {
   name: string

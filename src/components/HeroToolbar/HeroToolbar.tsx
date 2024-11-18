@@ -5,6 +5,7 @@ import toogleRight from '../../assets/toggle-right.png'
 import darkHeart from '../../assets/darkHeart1,5x.png'
 import heart from '../../assets/heart1,5x.png'
 import './HeroToolbar.css'
+import React from 'react'
 
 interface HeroToolbarProps {
   totalHeroes: number

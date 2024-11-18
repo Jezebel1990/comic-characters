@@ -1,5 +1,7 @@
 import './Navbar.css'
+// @ts-ignore
 import logo from '../../assets/logo3x.png'
+import React from 'react'
 
 export function Navbar() {
   return (

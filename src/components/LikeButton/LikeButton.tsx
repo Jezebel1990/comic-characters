@@ -1,5 +1,8 @@
+// @ts-ignore
 import LikeIcon from '../../assets/heart3x.png'
+// @ts-ignore
 import LikeActiveIcon from '../../assets/heartClick3x.png'
+import React from 'react'
 
 interface LikeButtonProps {
   isLiked: boolean

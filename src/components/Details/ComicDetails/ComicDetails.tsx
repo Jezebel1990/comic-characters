@@ -1,4 +1,5 @@
 import './ComicDetails.css'
+import React from 'react'
 
 interface ComicDetailsProps {
   comics: {
