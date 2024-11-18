@@ -1,6 +1,6 @@
 .hero-toolbar {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -11,12 +11,12 @@
   margin-right: 12px;
 }
 
-.toggle-icon{
+.toggle-icon {
   width: auto;
   height: 32px;
 }
 
-.favorites-icon{
+.favorites-icon {
   width: auto;
   height: 14px;
 }
@@ -27,7 +27,7 @@
   align-items: center;
 }
 
-.sort-button{
+.sort-button {
   gap: 20px;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .favorites-button.active {
-  color: var(--red-4); 
+  color: var(--red-4);
 }
 
 .hero-toolbar-left {
@@ -45,99 +45,94 @@
   font-weight: 600;
 }
 
+.hero-toolbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 350px;
+}
+
+.toggle-sort,
+.toggle-favorite {
+  color: var(--red-3);
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .hero-toolbar {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .hero-icon {
+    height: 18px;
+    margin-right: 8px;
+  }
+
+  .toggle-icon {
+    height: 28px;
+    margin-right: 20px;
+  }
+
+  .favorites-icon {
+    height: 12px;
+    margin-left: 2px;
+  }
+
+  .sort-button,
+  .favorites-button {
+    gap: 16px;
+  }
+
+  .favorites-button {
+    margin-left: 0;
+  }
 
   .hero-toolbar-right {
-      display: flex;
-      align-items: center;
-      justify-content: space-between; 
-      margin-left: 350px;
-    }
-
-    .toggle-sort,
-    .toggle-favorite {
-        color: var(--red-3);
-        font-size: 14px;
-        margin: 0;
-    }
-
-    @media (max-width: 480px) {
-      .hero-toolbar {
-          flex-direction: column;
-          gap: 10px;
-          margin-bottom: 12px;
-      }
-  
-      .hero-icon {
-          height: 18px;
-          margin-right: 8px;
-      }
-  
-      .toggle-icon {
-          height: 28px;
-          margin-right: 20px;
-      }
-  
-      .favorites-icon {
-          height: 12px;
-          margin-left: 2px;
-      }
-  
-      .sort-button,
-      .favorites-button {
-          gap: 16px;
-      }
-  
-      .favorites-button {
-          margin-left: 0;
-      }
-  
-      .hero-toolbar-right {
-          padding-right: 320px;
-          gap: 5px
-      }
-
-      .hero-toolbar-left {
-        padding-right: 40px;
-      }
-      
-      
-    .toggle-sort,
-    .toggle-favorite {
-        font-size: 12px;
-       
-    }
+    padding-right: 320px;
+    gap: 5px;
   }
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-      .hero-toolbar {
-          gap: 15px;
-           margin-bottom: 12px;
-      }
-  
-      .hero-icon {
-          height: 18px;
-      }
-  
-      .toggle-icon {
-          height: 30px;
-      }
-  
-      .favorites-icon {
-          height: 13px;
-      }
-  
-      .sort-button,
-      .favorites-button {
-          gap: 18px;
-      }
-  
-      .hero-toolbar-right {
-          margin-left: 30px;
-      }
 
-      .hero-toolbar-left {
-        margin-right: 20px;
-      }
+  .hero-toolbar-left {
+    padding-right: 40px;
   }
-  
-  
+
+  .toggle-sort,
+  .toggle-favorite {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-toolbar {
+    gap: 15px;
+    margin-bottom: 12px;
+  }
+
+  .hero-icon {
+    height: 18px;
+  }
+
+  .toggle-icon {
+    height: 30px;
+  }
+
+  .favorites-icon {
+    height: 13px;
+  }
+
+  .sort-button,
+  .favorites-button {
+    gap: 18px;
+  }
+
+  .hero-toolbar-right {
+    margin-left: 30px;
+  }
+
+  .hero-toolbar-left {
+    margin-right: 20px;
+  }
+}

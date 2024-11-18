@@ -28,6 +28,7 @@ O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de
 ### Página de Detalhe do Personagem
 - Exibir os dados do personagem.
 - Exibir os últimos 10 quadrinhos lançados do personagem (com base no campo `onSaleDate`).
+- Permitir o usuário favoritar/desfavoritar (dentro do limite de 5).
 
 ## Requisitos Técnicos
 
@@ -54,10 +55,15 @@ O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de
   - Descrição
   - Imagem (thumbnail)
   - Últimos 10 quadrinhos lançados (ordenados por data de lançamento, `onSaleDate`).
-- Opção de voltar para a página principal (Home).
+  - Opção de voltar para a página principal (Home).
+
+### Outros
+- Persistência dos dados de favoritos (para manter os dados após o reload da página);
+- Layout responsivo;
+- Utilização de ES6+;
+- Utilização de ferramentas (Prettier, ESLint e Husky) para garantir a qualidade do código.
 
 ## Requisitos de Implementação
-
 1. **SPA**: A aplicação deve ser construída como uma SPA, sem a necessidade de recarregar a página.
 2. **Não utilizar bibliotecas de UI prontas**: A aplicação deve ser construída com React e CSS próprio, sem a utilização de frameworks como Bootstrap, Semantic UI ou Ant Design.
 3. **API da Marvel**: O projeto deve consumir a [API da Marvel](https://developer.marvel.com/docs), utilizando a chave de API fornecida ao registrar o aplicativo.
@@ -117,6 +123,27 @@ A API da Marvel requer uma chave pública e privada, que podem ser obtidas ao se
 **Listar personagens:** `https://gateway.marvel.com/v1/public/characters`
 **Detalhes de um personagem:** `https://gateway.marvel.com/v1/public/characters/{characterId}`
 **Quadrinhos de um personagem:** `https://gateway.marvel.com/v1/public/characters/{characterId}/comics`
+
+
+## Como formatar o código
+
+Este projeto utiliza o [Prettier](https://prettier.io/) para garantir que o código esteja formatado de maneira consistente.
+
+### Rodar o Prettier
+
+Para formatar o código do projeto, execute o seguinte comando:
+
+```bash
+npx prettier src/ --write
+```
+
+### Rodar o Eslint
+O ESLint é uma ferramenta para identificar e corrigir problemas de estilo e qualidade de código, ajudando a manter o código consistente e sem erros. Para rodar o ESLint e verificar se o código está seguindo as regras de estilo definidas, execute:
+
+```bash
+npm run lint
+```
+
 
 ### Licença
 Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.

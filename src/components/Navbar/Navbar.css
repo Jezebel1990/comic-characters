@@ -1,38 +1,37 @@
 .navbar {
-    display: flex;
-    justify-content: center;
-    margin-block: 24px;
-    background-color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-block: 24px;
+  background-color: #fff;
 }
 
 .logo {
-    width: 320px;
-    height: 120px;
+  width: 320px;
+  height: 120px;
 }
-
 
 /* Estilos para dispositivos móveis (máximo de 480px) */
 @media screen and (max-width: 480px) {
-    .navbar {
-        margin-block: 16px; 
-        padding: 8px; 
-    }
+  .navbar {
+    margin-block: 16px;
+    padding: 8px;
+  }
 
-    .logo {
-        width: 150px;  
-        height: auto; 
-    }
+  .logo {
+    width: 150px;
+    height: auto;
+  }
 }
 
 /* Estilos para tablets (entre 768px e 1024px) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .navbar {
-        margin-block: 20px;  
-        padding: 12px; 
-    }
+  .navbar {
+    margin-block: 20px;
+    padding: 12px;
+  }
 
-    .logo {
-        width: 180px;  
-        height: auto; 
-    }
+  .logo {
+    width: 180px;
+    height: auto;
+  }
 }

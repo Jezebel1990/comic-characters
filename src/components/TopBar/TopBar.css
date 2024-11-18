@@ -1,30 +1,26 @@
 .logo-hero {
-    width: auto;
-    height: 64px;
-    background: 'none';
-    border: 'none';
-    cursor: 'pointer';
-    
+  width: auto;
+  height: 64px;
+  background: 'none';
+  border: 'none';
+  cursor: 'pointer';
 }
 
 .topbar-container {
-    display: flex;
-    align-items: center; 
-    justify-content: flex-start; 
-    padding-left: 80px; 
-    gap: 90px;
-    padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 80px;
+  gap: 90px;
+  padding-top: 30px;
 }
-
-
 
 /* Responsividade para telas de 480px */
 @media (max-width: 480px) {
-    .topbar-container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 36px;
-        gap: 20px;
-    }
+  .topbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 36px;
+    gap: 20px;
+  }
 }
-

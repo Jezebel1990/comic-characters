@@ -19,15 +19,14 @@ p {
 
 .search-bar-container {
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
 }
 
-
-.hero-toolbar, .character-list {
+.hero-toolbar,
+.character-list {
   margin: 0;
 }
-
 
 .hero-container {
   display: flex;
@@ -37,33 +36,29 @@ p {
   margin-right: 0px;
 }
 
-
-
-.hero-toolbar{
+.hero-toolbar {
   margin-top: 40px;
   margin-bottom: 10px;
 }
 
-
 .character-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 36px;
 }
 
- .character-card {
+.character-card {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   position: relative;
-} 
-
-.character-image {
-  width: 220px; 
-  height: 220px; 
-  border-bottom: 5px solid var(--red-6);
 }
 
+.character-image {
+  width: 220px;
+  height: 220px;
+  border-bottom: 5px solid var(--red-6);
+}
 
 .character-name-container {
   display: flex;
@@ -72,7 +67,6 @@ p {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 30px;
-
 }
 
 .character-name {
@@ -81,14 +75,11 @@ p {
   margin: 0;
 }
 
-
-
-
 /* Estilos para dispositivos móveis (máximo de 480px) */
 @media screen and (max-width: 480px) {
   .character-list {
-    grid-template-columns: 1fr;  
-    gap: 12px; 
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .hero-container {
@@ -96,40 +87,38 @@ p {
     margin-right: 35px;
   }
 
-  .hero-toolbar{
+  .hero-toolbar {
     margin-top: 30px;
     margin-bottom: 5px;
   }
-  
+
   h1 {
-    font-size: 1.25rem;  
-    margin: 6px 0;  
+    font-size: 1.25rem;
+    margin: 6px 0;
   }
   p {
-    font-size: 11px;  
-    margin: 0 20px;  
+    font-size: 11px;
+    margin: 0 20px;
   }
 }
 
 /* Estilos para tablets (768px a 1024px) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .character-list {
-    grid-template-columns: repeat(2, 1fr);  
-    gap: 16px;  
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .hero-container {
     margin-right: 120px;
   }
-  
-   
 
   h1 {
-    font-size: 1.5rem;  
-    margin: 8px 0;  
+    font-size: 1.5rem;
+    margin: 8px 0;
   }
   p {
-    font-size: 13px;  
-    margin: 0 25px;  
+    font-size: 13px;
+    margin: 0 25px;
   }
 }

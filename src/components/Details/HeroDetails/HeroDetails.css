@@ -1,12 +1,11 @@
 .hero-details-container {
-    display: flex;
-    gap: 20px;
-    position: relative;
-    padding-left: 160px;
-    z-index: 2;
-    overflow: hidden;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding-left: 160px;
+  z-index: 2;
+  overflow: hidden;
 }
-
 
 .hero-details-container::before {
   content: attr(data-text);
@@ -22,83 +21,79 @@
 }
 
 .hero-details {
-    width: 300px;
-    padding-left: 0;
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
+  width: 300px;
+  padding-left: 0;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .hero-details h2 {
-    margin: 0;
-    font-size: 24px;
-    color: var(--grey-1);
+  margin: 0;
+  font-size: 24px;
+  color: var(--grey-1);
 }
-
 
 .hero-details h6 {
-    margin: 0;
-    color: var(--grey-1);
-    
+  margin: 0;
+  color: var(--grey-1);
 }
 
-
 #description {
-    color: var(--grey-2);
-    font-size: 12px;
+  color: var(--grey-2);
+  font-size: 12px;
 }
 
 .hero-details p {
-    margin: 0;
-    font-size: 12px;
-    text-align: left;
-    color: var(--grey-1);
-    font-weight: 500;
+  margin: 0;
+  font-size: 12px;
+  text-align: left;
+  color: var(--grey-1);
+  font-weight: 500;
 }
 
 .hero-details .info-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
 }
 
 .hero-details .info-columns div {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .hero-details .info-columns img {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
 }
 
 .hero-details .rating,
 .hero-details .last-comic {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.hero-details .comics, 
+.hero-details .comics,
 .hero-details .series,
 .hero-details .rating h6,
 .hero-details .last-comic h6 {
-    margin-right: 0px; 
+  margin-right: 0px;
 }
 
 .hero-image {
-    width: auto;
-    height: 500px;
-    max-width: 100%;
-    object-fit: cover;
-    padding-top: 30px;
+  width: auto;
+  height: 500px;
+  max-width: 100%;
+  object-fit: cover;
+  padding-top: 30px;
 }
-
 
 /* Estilos para dispositivos móveis (máximo de 480px) */
 @media (max-width: 480px) {
@@ -106,74 +101,68 @@
     padding-left: 60px;
   }
 
+  .hero-container {
+    flex-direction: column;
+    padding-left: 36px;
+  }
 
-    .hero-container {
-      flex-direction: column;
-      padding-left: 36px;
-    }
-  
-    .hero-container::before {
-      font-size: 100px;
-      right: 10px;
-    }
-  
-    .hero-details {
-      width: 300px;
-      padding-top: 40px;
-    }
-  
-    .hero-details h2 {
-      font-size: 18px;
-    }
-  
-    .hero-details p {
-      font-size: 10px;
-    }
-  
-    .hero-image {
-      display: none;
+  .hero-container::before {
+    font-size: 100px;
+    right: 10px;
+  }
 
-    }
-  
-  
-  
+  .hero-details {
+    width: 300px;
+    padding-top: 40px;
+  }
 
-  
+  .hero-details h2 {
+    font-size: 18px;
+  }
+
+  .hero-details p {
+    font-size: 10px;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
   /* Estilos para tablets (768px a 1024px) */
   @media (min-width: 768px) and (max-width: 1024px) {
     .hero-container {
       flex-direction: column;
     }
-  
+
     .hero-container::before {
       font-size: 150px;
       right: 15px;
     }
-  
+
     .hero-details {
       width: 80%;
       padding-top: 60px;
     }
-  
+
     .hero-details h2 {
       font-size: 20px;
     }
-  
+
     .hero-details p {
       font-size: 11px;
     }
-  
+
     .hero-image {
       height: 400px;
     }
-  
+
     .hero-details .info-columns {
       grid-template-columns: 1fr 1fr;
     }
-  
+
     .hero-details .rating,
     .hero-details .last-comic {
       flex-direction: row;
     }
-}
+  }
 }

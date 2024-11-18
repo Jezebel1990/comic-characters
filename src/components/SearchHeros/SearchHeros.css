@@ -1,74 +1,71 @@
 .search-heros {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    border-radius: 32px;
-    height: 44px;
-    width: 620px;
-    background-color: #fff;
- 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 32px;
+  height: 44px;
+  width: 620px;
+  background-color: #fff;
 }
 
 .search-heros-input {
-    border: none;
-    outline: none;
-    padding: 32px;
-    flex: 1;
-    font-size: 12px;
-    font-weight: bold;
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
-    color: var(--grey-3);
+  border: none;
+  outline: none;
+  padding: 32px;
+  flex: 1;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  color: var(--grey-3);
 }
 
 .search-heros-input::placeholder {
-    color: var(--grey-3);
+  color: var(--grey-3);
 }
 
 .search-hero-icon {
-    height: 16px;
-    width: 16px;
-    margin-inline-start: 20px;
-    cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin-inline-start: 20px;
+  cursor: pointer;
 }
 
-
-
 @media (max-width: 480px) {
-    .search-heros {
-        width: 300px;  
-        padding: 0 16px;  
-        height: 50px;  
-    }
+  .search-heros {
+    width: 300px;
+    padding: 0 16px;
+    height: 50px;
+  }
 
-    .search-heros-input {
-        padding: 8px 16px;  
-        font-size: 10px;  
-    }
+  .search-heros-input {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
 
-    .search-hero-icon {
-        height: 14px;  
-        width: 14px;  
-        margin-inline-start: 10px;  
-    }
+  .search-hero-icon {
+    height: 14px;
+    width: 14px;
+    margin-inline-start: 10px;
+  }
 }
 
 /* Responsividade para tablets (768px a 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .search-heros {
-        width: 50%;  
-        height: 44px;  
-    }
+  .search-heros {
+    width: 50%;
+    height: 44px;
+  }
 
-    .search-heros-input {
-        font-size: 11px;  
-    }
+  .search-heros-input {
+    font-size: 11px;
+  }
 
-    .search-hero-icon {
-        height: 16px;
-        width: 16px;
-        margin-inline-start: 15px;  
-    }
+  .search-hero-icon {
+    height: 16px;
+    width: 16px;
+    margin-inline-start: 15px;
+  }
 }

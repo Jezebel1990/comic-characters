@@ -1,12 +1,12 @@
-import "./ComicDetails.css";
+import './ComicDetails.css'
 
 interface ComicDetailsProps {
   comics: {
-    id: number;
-    image: string;
-    title: string;
-    onSaleDate: string;
-  }[];
+    id: number
+    image: string
+    title: string
+    onSaleDate: string
+  }[]
 }
 
 export function ComicDetails({ comics }: ComicDetailsProps) {
@@ -15,7 +15,11 @@ export function ComicDetails({ comics }: ComicDetailsProps) {
       <h3 className="comic-news">Últimos lançamentos</h3>
       <div className="comic-grid">
         {comics
-          .sort((a, b) => new Date(b.onSaleDate).getTime() - new Date(a.onSaleDate).getTime())
+          .sort(
+            (a, b) =>
+              new Date(b.onSaleDate).getTime() -
+              new Date(a.onSaleDate).getTime()
+          )
           .slice(0, 10)
           .map((comic) => (
             <div key={comic.id} className="comic-item">
@@ -23,9 +27,10 @@ export function ComicDetails({ comics }: ComicDetailsProps) {
                 src={comic.image}
                 alt={comic.title}
                 className="comic-images"
-                loading="lazy" 
+                loading="lazy"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://ambrosia.com.br/wp-content/uploads/2023/03/marvel-universo-super-herois-revista-cultural-ambrosia.webp';
+                  ;(e.target as HTMLImageElement).src =
+                    'https://ambrosia.com.br/wp-content/uploads/2023/03/marvel-universo-super-herois-revista-cultural-ambrosia.webp'
                 }}
               />
               <p>{comic.title}</p>
@@ -34,12 +39,12 @@ export function ComicDetails({ comics }: ComicDetailsProps) {
                 {new Date(comic.onSaleDate).toLocaleDateString('pt-BR', {
                   day: '2-digit',
                   month: 'short',
-                  year: 'numeric',
+                  year: 'numeric'
                 })}
               </p>
             </div>
           ))}
       </div>
     </div>
-  );
+  )
 }
