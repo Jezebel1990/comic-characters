@@ -8,6 +8,8 @@
     "emitDeclarationOnly": true ,
     "composite": true ,
     "baseUrl": "./",
+    "module": "ESNext",
+    "moduleResolution": "node"
 
   },
   "references": [
