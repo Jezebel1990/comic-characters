@@ -1,6 +1,9 @@
 import './HeroDetails.css'
+// @ts-ignore
 import bookIcon from '../../../assets/book.svg'
+// @ts-ignore
 import videoIcon from '../../../assets/video.svg'
+// @ts-ignore
 import reviewIcon from '../../../assets/review.svg'
 import { LikeHeroButton } from '../../LikeHeroButton/LikeHeroButton'
 import { useState, useEffect } from 'react'

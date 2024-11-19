@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+// @ts-ignore
 import logoHero from '../../assets/logo2x.png'
 import './TopBar.css'
 import { SearchHeros } from '../SearchHeros/SearchHeros'

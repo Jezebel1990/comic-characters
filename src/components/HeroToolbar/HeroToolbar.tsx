@@ -1,8 +1,13 @@
 import { useState } from 'react'
+// @ts-ignore
 import hero from '../../assets/superhero.png'
+// @ts-ignore
 import toogleLeft from '../../assets/toggle-left.png'
+// @ts-ignore
 import toogleRight from '../../assets/toggle-right.png'
+// @ts-ignore
 import darkHeart from '../../assets/darkHeart1,5x.png'
+// @ts-ignore
 import heart from '../../assets/heart1,5x.png'
 import './HeroToolbar.css'
 import React from 'react'
