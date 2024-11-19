@@ -3,9 +3,15 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "types": ["jest", "@testing-library/jest-dom"]
-
+    "types": ["jest", "@testing-library/jest-dom", "cypress", "@cypress/react"],
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true ,
+    "composite": true ,
+    "baseUrl": "./",
+    "module": "ESNext",
+    "moduleResolution": "node"
   },
+  
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" },

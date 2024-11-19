@@ -1,3 +1,4 @@
+// @ts-ignore
 import shape from '../../assets/shape3x.png'
 import { useNavigate } from 'react-router-dom'
 import { ChangeEvent } from 'react'

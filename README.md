@@ -61,8 +61,10 @@ O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de
 - Persistência dos dados de favoritos (para manter os dados após o reload da página);
 - Layout responsivo;
 - Utilização de ES6+;
-- Utilização de ferramentas (Prettier, ESLint e Husky) para garantir a qualidade do código.
-- Testes com Jest e React Testing Library.
+- Utilização de ferramentas (Prettier, ESLint e Husky) para garantir a qualidade do código;
+- Testes unitários com Jest e React Testing Library;
+- Teste e2e com Cypress;
+- CI utilizando GitHub Workflows.
 
 ## Requisitos de Implementação
 1. **SPA**: A aplicação deve ser construída como uma SPA, sem a necessidade de recarregar a página.
@@ -102,7 +104,7 @@ O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de
 ```
 
 
-5. Abra o navegador e acesse `http://localhost:5173` para visualizar o projeto em execução.
+5. Abra o navegador e acesse `http://localhost:3000` para visualizar o projeto em execução.
 
 ### Estrutura do Projeto
 ├── assets/                 # Arquivos de layout e recursos estáticos
@@ -145,13 +147,21 @@ O ESLint é uma ferramenta para identificar e corrigir problemas de estilo e qua
 npm run lint
 ```
 
-## Executar Testes
+## Executar Testes Unitários
 
-Para rodar os testes deste projeto, utilize o seguinte comando:
+Para rodar os testes unitários deste projeto, utilize o seguinte comando:
 
 ```bash
 npm run test
 ```
+
+## Executar Teste e2e
+Para rodar o teste e2e deste projeto, utilize o seguinte comando:
+
+```bash
+npx cypress open
+```
+Depois que a interface do Cypress abrir, clique em 'E2E Testing' para configurar ou rodar os testes end-to-end.
 
 ### Licença
 Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
