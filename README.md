@@ -106,18 +106,21 @@ O objetivo deste projeto é desenvolver uma aplicação de listagem e detalhe de
 
 5. Abra o navegador e acesse `http://localhost:3000` para visualizar o projeto em execução.
 
-### Estrutura do Projeto
-├── assets/                 # Arquivos de layout e recursos estáticos
-├── src/
-│   ├── components/         # Componentes reutilizáveis
-│   ├── pages/              # Páginas (Home e Detalhe)
-│   ├── hooks/              # Integração com a API da Marvel
-│   ├── store/              # Gerenciamento de estado 
-│   └── App.js              # Componente principal
-├── public/                 # Arquivos públicos, como o index.html
-├── package.json            # Dependências e scripts do projeto
-├── .gitignore              # Arquivos e pastas a serem ignorados pelo Git
-└── README.md               # Este arquivo
+## Estrutura do Projeto
+
+| Caminho                  | Descrição                                 |
+|--------------------------|-------------------------------------------|
+| `assets/`                | Arquivos de layout e recursos estáticos  |
+| `src/`                   | Código-fonte principal do projeto        |
+| `src/components/`        | Componentes reutilizáveis                |
+| `src/pages/`             | Páginas (Home e Detalhe)                 |
+| `src/hooks/`             | Hooks personalizados para integração com a API da Marvel |
+| `src/store/`             | Gerenciamento de estado                  |
+| `src/App.js`             | Componente principal da aplicação        |
+| `public/`                | Arquivos públicos, como o `index.html`   |
+| `package.json`           | Dependências e scripts do projeto        |
+| `.gitignore`             | Arquivos e pastas ignorados pelo Git     |
+| `README.md`              | Documentação do projeto                  |
 
 
 ### API da Marvel
